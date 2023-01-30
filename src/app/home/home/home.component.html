@@ -1,0 +1,104 @@
+<div class="content" role="main">
+
+    <!-- Highlight Card -->
+  <mat-card class="card highlight-card card-small"><mat-icon color="accent">schedule</mat-icon>
+    Semester Schedule
+  </mat-card>
+
+  </div>
+
+  <div class="main-containers">
+    <!-- DISPLAYED LIST -->
+    
+    <div class="main-list">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title class="schedule-title">
+                    Current Schedule
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item *ngFor="let item of items">
+                        <button mat-raised-button class="scheduled-item" color="primary">{{item.name}}</button>
+                            <span class="scheduled-details">Period: </span>
+                            <span class="scheduled-category">{{item.period}}</span>
+                            <span class="scheduled-priority" *ngIf="item.enrolled === 'true' || item.enrolled === true">
+                                <mat-icon 
+                                color="warn">
+                                check_circle
+                                </mat-icon>
+                            </span>
+                            <span>
+                                <button 
+                                mat-icon-button
+                                class="scheduled-delete" 
+                                (click)="deleteItem(item.id);$event.stopImmediatePropagation()">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                            </span>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+
+</div>
+    <!-- INPUT FORM -->
+    
+        <div class="main-two-details">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title class="form-title">
+                        Add a Class
+                    </mat-card-title>
+                </mat-card-header>
+                <form #form="ngForm" class="mat-form-field--inline" (submit)="saveItem(scheduledItem)">
+                    <mat-card-content>
+                        <mat-form-field class="full-width">
+                            <input 
+                            matInput
+                            placeholder="ID"
+                            required
+                            name="id"
+                            [(ngModel)]="scheduledItem.id"
+                            type="number">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <input 
+                            matInput
+                            placeholder="Name"
+                            required
+                            name="name"
+                            [(ngModel)]="scheduledItem.name"
+                            type="text">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <input 
+                            matInput
+                            placeholder="Period"
+                            name="period"
+                            [(ngModel)]="scheduledItem.period"
+                            type="text">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>Enrolled?</mat-label>
+                                <mat-select
+                                matInput
+                                name="enrolled"
+                                [(ngModel)]="scheduledItem.enrolled"
+                                >
+                                    <mat-option value=true>Yes</mat-option>
+                                    <mat-option value=false>No</mat-option>
+                                </mat-select>
+                        </mat-form-field>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button type="submit" [disabled]="form.invalid" mat-button color="primary">Save</button>
+                    </mat-card-actions>
+                </form>
+            </mat-card>
+        </div>
+  
+

@@ -1,0 +1,34 @@
+{
+    "items": [
+      {
+        "id": "1",
+        "name": "Algebra",
+        "period": "1st",
+        "enrolled": false
+      },
+      {
+        "id": "2",
+        "name": "History",
+        "period": "2nd",
+        "enrolled": true
+      },
+      {
+        "id": "3",
+        "name": "Computer Science",
+        "period": "3rd",
+        "enrolled": true
+      },
+      {
+        "id": "4",
+        "name": "Biology",
+        "period": "4th",
+        "enrolled": true
+      },
+      {
+        "id": 5,
+        "name": "Theology",
+        "period": "5th",
+        "enrolled": "true"
+      }
+    ]
+  }

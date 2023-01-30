@@ -1,0 +1,48 @@
+// TOOLBAR
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #F50057;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar #build {
+    height:30px;
+    margin: 0 1%;
+    transform: scale(1.2);
+  }
+
+  .toolbar #home {
+    height:30px;
+    margin: 0 1%;
+    transform: scale(1.4);
+
+  }
+
+  .toolbar #build:hover,
+  .toolbar #home:hover {
+    opacity: 0.8;
+  }
+
+  .title {
+    vertical-align: middle;
+    margin-left: 2%;
+    font-size: x-large;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .spacer-small {
+    margin-left: 1%;
+  }
+
+
+  
